@@ -1,15 +1,19 @@
+body, html {
+  background-color: #193441;
+}
+
 #calculator {
   width: 60vh;
-  margin: 0 auto;
+  margin: 5vh auto 0;
 
   #result {
     height: 22vh;
-    background-color: red;
+    background-color: #FCFFF5;
   }
 
   #preview {
     height: 8vh;
-    background-color: green;
+    background-color: #3E606F;
   }
 
   #keys {
@@ -30,6 +34,12 @@
         height: 15vh;
         width: 15vh;
         line-height: 15vh;
+        background-color: #D1DBBD;
+        transition: background-color 0.3s ease-in;
+
+        &:hover {
+          background-color: darken(#D1DBBD, 10%);
+        }
       }
     }
 
@@ -40,6 +50,12 @@
         width: 15vh;
         height: 12vh;
         line-height: 12vh;
+        background-color: #91AA9D;
+        transition: background-color 0.3s ease-in;
+
+        &:hover {
+          background-color: darken(#91AA9D, 10%);
+        }
       }
     }
   }
