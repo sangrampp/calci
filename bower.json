@@ -1,0 +1,22 @@
+{
+  "name": "calci",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Sahiti Gopal <sahitigopal20@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/sahitigo/calculator",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4"
+  }
+}
