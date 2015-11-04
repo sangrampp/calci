@@ -1,0 +1,46 @@
+#calculator {
+  width: 60vh;
+  margin: 0 auto;
+
+  #result {
+    height: 22vh;
+    background-color: red;
+  }
+
+  #preview {
+    height: 8vh;
+    background-color: green;
+  }
+
+  #keys {
+    text-align: center;
+
+    #numbers {
+      padding: 0;
+
+      >.numbers-container {
+        padding: 0;
+
+        >.numbers-row {
+          margin: 0;
+        }
+      }
+
+      .number {
+        height: 15vh;
+        width: 15vh;
+        line-height: 15vh;
+      }
+    }
+
+    #operators {
+      padding: 0;
+
+      .operator {
+        width: 15vh;
+        height: 12vh;
+        line-height: 12vh;
+      }
+    }
+  }
+}
