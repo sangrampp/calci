@@ -1,19 +1,33 @@
 Calci =
   init: ->
     $('.key').click ->
-      Calci.handleInput(this)
+      Calci.handleKeyClick(this)
     $('.key.delete').dblclick ->
-      $('#preview').html('')
-      $('#result').html('')
+      Calci.handleClear()
+    Calci.bindKeyboard()
+  bindKeyboard: ->
+    keyboardShortcuts = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '/', '*', '.']
+    for key in keyboardShortcuts
+      $(document).bind('keyup', key, Calci.handleInputFunctionWrapper(key))
+    $(document).bind('keyup', 'backspace', (-> Calci.handleDelete()))
+    $(document).bind('keyup', 'esc', (-> Calci.handleClear()))
+    $(document).bind('keyup', 'return', (-> Calci.evaluateResult()))
   evaluateResult: ->
     $('#result').html(eval($('#preview').html()))
   handleDelete: ->
     $('#preview').html($('#preview').html().slice(0, -1))
-  handleInput: (ele) ->
+  handleClear: ->
+    $('#preview').html('')
+    $('#result').html('')
+  handleKeyClick: (ele) ->
     switch ele.dataset.keyType
       when "delete" then Calci.handleDelete()
       when "equals" then Calci.evaluateResult()
-      else $('#preview').append(ele.dataset.keyValue)
+      else Calci.handleInput(ele.dataset.keyValue)
+  handleInput: (val) ->
+    $('#preview').append(val)
+  handleInputFunctionWrapper: (val) ->
+    return -> Calci.handleInput(val)
       
 
 $ ->
