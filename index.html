@@ -9,7 +9,7 @@
   <script src="js/calci.js"></script>
 
 
-  <link href='https://fonts.googleapis.com/css?family=Roboto:100,300' rel='stylesheet' type='text/css'>
+  <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:100,300' rel='stylesheet' type='text/css'> -->
 </head>
 <body>
   <div id="calculator">
@@ -20,33 +20,33 @@
         <div id="numbers" class="col-xs-9">
           <div class="container-fluid numbers-container">
             <div class="row numbers-row">
-              <div class="col-xs-4 number key">7</div>
-              <div class="col-xs-4 number key">8</div>
-              <div class="col-xs-4 number key">9</div>
+              <div class="col-xs-4 number key" data-key-type="number" data-key-value="7">7</div>
+              <div class="col-xs-4 number key" data-key-type="number" data-key-value="8">8</div>
+              <div class="col-xs-4 number key" data-key-type="number" data-key-value="9">9</div>
             </div>
             <div class="row numbers-row">
-              <div class="col-xs-4 number key">4</div>
-              <div class="col-xs-4 number key">5</div>
-              <div class="col-xs-4 number key">6</div>
+              <div class="col-xs-4 number key" data-key-type="number" data-key-value="4">4</div>
+              <div class="col-xs-4 number key" data-key-type="number" data-key-value="5">5</div>
+              <div class="col-xs-4 number key" data-key-type="number" data-key-value="6">6</div>
             </div>
             <div class="row numbers-row">
-              <div class="col-xs-4 number key">1</div>
-              <div class="col-xs-4 number key">2</div>
-              <div class="col-xs-4 number key">3</div>
+              <div class="col-xs-4 number key" data-key-type="number" data-key-value="1">1</div>
+              <div class="col-xs-4 number key" data-key-type="number" data-key-value="2">2</div>
+              <div class="col-xs-4 number key" data-key-type="number" data-key-value="3">3</div>
             </div>
             <div class="row numbers-row">
-              <div class="col-xs-4 number key">.</div>
-              <div class="col-xs-4 number key">0</div>
-              <div class="col-xs-4 number key equals">=</div>
+              <div class="col-xs-4 number key" data-key-type="decimal" data-key-value=".">.</div>
+              <div class="col-xs-4 number key" data-key-type="number" data-key-value="0">0</div>
+              <div class="col-xs-4 number key" data-key-type="equals">=</div>
             </div>
           </div>
         </div>
         <div id="operators" class="col-xs-3">
-          <div class="operator key delete">DEL</div>
-          <div class="operator key">/</div>
-          <div class="operator key">X</div>
-          <div class="operator key">-</div>
-          <div class="operator key">+</div>
+          <div class="operator key delete" data-key-type="delete">DEL</div>
+          <div class="operator key" data-key-type="operator" data-key-value="/">/</div>
+          <div class="operator key" data-key-type="operator" data-key-value="*">X</div>
+          <div class="operator key" data-key-type="operator" data-key-value="-">-</div>
+          <div class="operator key" data-key-type="operator" data-key-value="+">+</div>
         </div>
       </div>
     </div>

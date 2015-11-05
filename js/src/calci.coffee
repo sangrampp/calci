@@ -2,7 +2,7 @@ Calci =
   init: ->
     $('.key').click ->
       Calci.handleInput(this)
-    $('.delete').dblclick ->
+    $('.key.delete').dblclick ->
       $('#preview').html('')
       $('#result').html('')
   evaluateResult: ->
@@ -10,12 +10,11 @@ Calci =
   handleDelete: ->
     $('#preview').html($('#preview').html().slice(0, -1))
   handleInput: (ele) ->
-    if $(ele).hasClass('delete')
-      Calci.handleDelete()
-    else if $(ele).hasClass('equals')
-      Calci.evaluateResult()
-    else
-      $('#preview').append($(ele).html())
+    switch ele.dataset.keyType
+      when "delete" then Calci.handleDelete()
+      when "equals" then Calci.evaluateResult()
+      else $('#preview').append(ele.dataset.keyValue)
+      
 
 $ ->
   Calci.init()
