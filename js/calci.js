@@ -49,12 +49,26 @@
       }
     },
     handleInput: function(val) {
+      if (val === '.') {
+        if (!Calci.allowDecimal()) {
+          return;
+        }
+      }
       return $('#preview').append(val);
     },
     handleInputFunctionWrapper: function(val) {
       return function() {
         return Calci.handleInput(val);
       };
+    },
+    allowDecimal: function() {
+      var lastNumber, preview;
+      preview = $('#preview').html();
+      lastNumber = preview.match(/[\d.]*$/)[0];
+      if (lastNumber === '') {
+        return true;
+      }
+      return !lastNumber.match(/\./);
     }
   };
 

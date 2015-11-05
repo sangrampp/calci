@@ -25,10 +25,17 @@ Calci =
       when "equals" then Calci.evaluateResult()
       else Calci.handleInput(ele.dataset.keyValue)
   handleInput: (val) ->
+    if val == '.'
+      if !Calci.allowDecimal()
+        return
     $('#preview').append(val)
   handleInputFunctionWrapper: (val) ->
     return -> Calci.handleInput(val)
-      
+  allowDecimal: ->
+    preview = $('#preview').html()
+    lastNumber = preview.match(/[\d.]*$/)[0]
+    return true if lastNumber == ''
+    return !lastNumber.match(/\./)
 
 $ ->
   Calci.init()
