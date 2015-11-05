@@ -1,23 +1,28 @@
-$(document).ready(function() {
-  $('.key').click(function() {
-    handleInput(this);
+(function() {
+  var Calci = {
+    init: function() {
+      $('.key').click(function() {
+        Calci.handleInput(this);
+      });
+    },
+    evaluateResult: function() {
+      $('#result').html(eval($('#preview').html()));
+    },
+    handleDelete: function() {
+      $('#preview').html($('#preview').html().slice(0, -1));
+    },
+    handleInput: function(ele) {
+      if($(ele).hasClass('delete')) {
+        Calci.handleDelete();
+      } else if ($(ele).hasClass('equals')) {
+        Calci.evaluateResult();
+      } else {
+        $('#preview').append($(ele).html());
+      }
+    }
+  };
+
+  $(document).ready(function() {
+    Calci.init();
   });
-});
-
-function evaluateResult() {
-  $('#result').html(eval($('#preview').html()));
-}
-
-function handleDelete() {
-  $('#preview').html($('#preview').html().slice(0, -1));
-}
-
-function handleInput(ele) {
-  if($(ele).hasClass('delete')) {
-    handleDelete();
-  } else if ($(ele).hasClass('equals')) {
-    evaluateResult();
-  } else {
-    $('#preview').append($(ele).html());
-  }
-}
+})();
