@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
-    coffee = require('gulp-coffee');
+    coffee = require('gulp-coffee'),
+    gutil = require('gulp-util');
 
 
 gulp.task('css', function () {

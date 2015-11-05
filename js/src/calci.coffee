@@ -2,6 +2,9 @@ Calci =
   init: ->
     $('.key').click ->
       Calci.handleInput(this)
+    $('.delete').dblclick ->
+      $('#preview').html('')
+      $('#result').html('')
   evaluateResult: ->
     $('#result').html(eval($('#preview').html()))
   handleDelete: ->
