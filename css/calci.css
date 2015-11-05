@@ -24,6 +24,14 @@ body, html {
     font-weight: 300; }
   #calculator #keys {
     text-align: center; }
+    #calculator #keys .key {
+      cursor: pointer; }
+      #calculator #keys .key::selection {
+        background: transparent;
+        /* WebKit/Blink Browsers */ }
+      #calculator #keys .key::-moz-selection {
+        background: transparent;
+        /* Gecko Browsers */ }
     #calculator #keys #numbers {
       padding: 0; }
       #calculator #keys #numbers > .numbers-container {

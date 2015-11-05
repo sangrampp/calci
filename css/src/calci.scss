@@ -31,6 +31,17 @@ body, html {
   #keys {
     text-align: center;
 
+    .key {
+      cursor: pointer;
+
+      &::selection {
+        background: transparent; /* WebKit/Blink Browsers */
+      }
+      &::-moz-selection {
+        background: transparent; /* Gecko Browsers */
+      }
+    }
+
     #numbers {
       padding: 0;
 
