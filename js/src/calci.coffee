@@ -25,10 +25,14 @@ Calci =
       when "equals" then Calci.evaluateResult()
       else Calci.handleInput(ele.dataset.keyValue)
   handleInput: (val) ->
-    if val == '.'
-      if !Calci.allowDecimal()
-        return
+    return if val == '.' && !Calci.allowDecimal()
+    return if Calci.checkOperator(val) && Calci.lastCharIsOperator()
     $('#preview').append(val)
+  checkOperator: (val) ->
+    ['/', '*', '-', '+'].indexOf(val) > -1
+  lastCharIsOperator: ->
+    val = $('#preview').html().slice(-1)
+    Calci.checkOperator(val)
   handleInputFunctionWrapper: (val) ->
     return -> Calci.handleInput(val)
   allowDecimal: ->

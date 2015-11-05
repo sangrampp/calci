@@ -49,12 +49,21 @@
       }
     },
     handleInput: function(val) {
-      if (val === '.') {
-        if (!Calci.allowDecimal()) {
-          return;
-        }
+      if (val === '.' && !Calci.allowDecimal()) {
+        return;
+      }
+      if (Calci.checkOperator(val) && Calci.lastCharIsOperator()) {
+        return;
       }
       return $('#preview').append(val);
+    },
+    checkOperator: function(val) {
+      return ['/', '*', '-', '+'].indexOf(val) > -1;
+    },
+    lastCharIsOperator: function() {
+      var val;
+      val = $('#preview').html().slice(-1);
+      return Calci.checkOperator(val);
     },
     handleInputFunctionWrapper: function(val) {
       return function() {
