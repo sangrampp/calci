@@ -1,15 +1,27 @@
 body, html {
-  background-color: #193441; }
+  font-family: 'Roboto', sans-serif;
+  background-color: #193441;
+  font-weight: 300; }
 
 #calculator {
   width: 60vh;
   margin: 5vh auto 0; }
   #calculator #result {
     height: 22vh;
-    background-color: #FCFFF5; }
+    background-color: #FCFFF5;
+    text-align: right;
+    font-size: 11vh;
+    line-height: 22vh;
+    font-weight: 100;
+    padding-right: 0.1em; }
   #calculator #preview {
     height: 8vh;
-    background-color: #3E606F; }
+    background-color: #3E606F;
+    color: #FCFFF5;
+    line-height: 8vh;
+    text-align: right;
+    padding-right: 0.5em;
+    font-weight: 300; }
   #calculator #keys {
     text-align: center; }
     #calculator #keys #numbers {
